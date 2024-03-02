@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { PieChart } from "@mui/x-charts/PieChart";
 import "../style/dashboard.css";
 
@@ -135,12 +136,15 @@ const DashboardPage: React.FC = () => {
       {/* Add your dashboard components and content here */}
       <div className="graphSection">
         <PieChart
+          colors={["#6300a5", "#FF5733", "#C70039", "#00a400", "#ffd300"]}
           series={[
             {
               data: [
-                { id: 0, value: 10, label: "Comida" },
-                { id: 1, value: 15, label: "Entretenimiento" },
-                { id: 2, value: 20, label: "Productividad" },
+                { id: 0, value: 10, label: "Entretenimiento" },
+                { id: 1, value: 15, label: "Transporte" },
+                { id: 2, value: 20, label: "Varios" },
+                { id: 3, value: 20, label: "Basicos" },
+                { id: 4, value: 20, label: "Restaurantes" },
               ],
               cx: 120,
               innerRadius: 10,
@@ -152,7 +156,10 @@ const DashboardPage: React.FC = () => {
         />
         <div className="buttonContainer">
             <button className="graphButton">Ver Tu Reporte</button>
-            <button className="graphButton">Registrar Transaciones</button>
+            <Link href={"/dashboard/registerDataM"}>
+                <button className="graphButton">Registrar Transaciones</button>
+
+            </Link>
         </div>
       </div>
       <div className="expensesSection">

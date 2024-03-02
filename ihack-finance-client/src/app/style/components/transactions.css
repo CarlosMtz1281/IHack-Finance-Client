@@ -1,0 +1,46 @@
+.transaction-box{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--backGround3);
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.headerLeft{
+    margin-left: 3vw;
+}
+
+.transaction-name{
+    font-size: 5vw;
+}
+.transaction-date{
+    font-size: 3vw;
+}
+.transaction-category {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* This makes the div a circle */
+    display: inline-block; /* This allows the div to sit next to the text */
+    margin-right: 5px; /* This adds some space between the circle and the text */
+    margin-left: 2vw;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.transaction-amount{
+    font-size: 5vw;
+    margin-left: auto;
+    margin-right: 2vw;
+}

@@ -1,21 +1,41 @@
-
-.dashboardWrap{
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
+.dashboardWrap {
+  justify-content: center;
+  color: var(--whiteTxt);
+  font-weight: 600;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--backGround1);
+}
+.dashboardMainTittle{
+    font-size: 6vw;
+    margin-top: 5vh;
+    margin-left: 5vw;
+    margin-bottom: 5vh;
 }
 .graphSection {
   margin-top: 5vh;
 }
 
+.expenssesTittle {
+  font-size: 5vw;
+  margin-bottom: 2vh;
+}
+
 .expensesSection {
   margin-top: 5vh;
-  background-color: var(--backGround1);
+  color: var(--blackTxt);
+  font-weight: 400;
+  background-color: var(--backGround2);
   height: 150vw;
   width: 100vw;
-}
-.transactionContainer{
-
+  padding: 5vw;
 }
 
+.expensesSection{
+    font-size: 5vw
+}
+
+.transactionContainer {
+
+}

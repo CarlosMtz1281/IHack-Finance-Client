@@ -1,0 +1,96 @@
+/* ../../styles/nuevaPagina.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center; /* Asegura que el contenido esté verticalmente centrado */
+    align-items: center; /* Asegura que el contenido esté horizontalmente centrado */
+  }
+  
+  .intro-text {
+    font-size: 1.5rem; /* Tamaño de fuente para el texto introductorio */
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 2rem; /* Espacio debajo del texto introductorio */
+  }
+  
+  .header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e8e8e8;
+  }
+  
+  .form-section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%; /* Establece un ancho máximo para la sección del formulario */
+    max-width: 500px; /* O el ancho máximo que prefieras */
+  }
+  
+  .input {
+    border: 2px solid #ccc;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    width: 90%;
+  }
+  
+  .saldo-actual {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 1rem;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .left-button {
+    /* Puedes aplicar estilos específicos al botón izquierdo si es necesario */
+  }
+  
+  .right-button {
+    /* Puedes aplicar estilos específicos al botón derecho si es necesario */
+  }
+  
+  /* Si necesitas que los botones tengan un ancho específico, puedes añadir estas reglas */
+  .button.left-button, .button.right-button {
+    flex-basis: 48%; /* O cualquier otro valor que permita que ambos botones quepan en la misma fila */
+  }
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 1rem;
+  }
+  
+  .button-container {
+    text-align: center; /* Alinea el texto del botón y su descripción al centro */
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0.5rem; /* Añade un pequeño margen debajo del botón */
+  }
+  
+  .button-description {
+    font-size: 0.9rem; /* Un tamaño de fuente más pequeño para la descripción */
+    color: #555; /* Un color de texto más tenue para la descripción */
+  }

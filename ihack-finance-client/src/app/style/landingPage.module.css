@@ -7,4 +7,27 @@
     cursor: pointer;
     margin: 10px 0;
     border-radius: 12px;
+    font-size: 25px;
+}
+
+.background {
+    background-color: #acd8e6;
+    width: 100%;
+    position: relative;
+}
+
+.imageCont2{
+    display: flex;
+    margin-top: 20px;
+    padding: 0vw 2vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContainter {
+    margin-top: 50px;
+    bottom: 0;
+    margin-bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
 }

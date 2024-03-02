@@ -11,8 +11,30 @@ export default function Home() {
     <div>
       <Header />
       <div className="flex flex-col justify-center items-center">
+        <div className={styles.background}>
+          <div className={styles.imageCont2}>
+            <div>
+              <Image 
+                src="/ruedaCHi.png"
+                width={100}
+                height={200}
+                alt="rueda"
+              />
+            </div>
+            <div className="text-white text-center text-5xl font-bold">
+              Sabritones
+            </div>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image 
+              src="/backgroundLanding.png"
+              width={844}
+              height={200}
+              alt="bg image" />
+          </div>
+        </div>
         
-        <p className="text-xl pt-5 pb-8 px-6 text-left">
+        <p className="text-3xl pt-5 pb-8 px-6 text-left">
           Tu auditorio financiero personal para tomar control de tu dinero.
         </p>
         <button className={styles.signButton}>

@@ -1,0 +1,21 @@
+
+.dashboardWrap{
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.graphSection {
+  margin-top: 5vh;
+}
+
+.expensesSection {
+  margin-top: 5vh;
+  background-color: var(--backGround1);
+  height: 150vw;
+  width: 100vw;
+}
+.transactionContainer{
+
+}
+

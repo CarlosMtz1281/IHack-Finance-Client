@@ -6,27 +6,126 @@ import "../style/dashboard.css";
 import Transaction from "../components/transactions";
 
 const transactions = [
-  {
-    amount: 1000,
-    cost: 10,
-    name: "Transaction 1",
-    category: "1",
-    date: new Date(),
-  },
-  {
-    amount: 2000,
-    cost: 20,
-    name: "Transaction 2",
-    category: "2",
-    date: new Date(),
-  },
-  {
-    amount: 3000,
-    cost: 30,
-    name: "Transaction 3",
-    category: "3",
-    date: new Date(),
-  },
+    {
+        name: "Transaction 1",
+        amount: 1000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 2",
+        amount: 2000,
+        category: "2",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 3",
+        amount: 3000,
+        category: "3",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 4",
+        amount: 4000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 5",
+        amount: 5000,
+        category: "2",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 6",
+        amount: 6000,
+        category: "3",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 7",
+        amount: 7000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 8",
+        amount: 8000,
+        category: "2",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 9",
+        amount: 9000,
+        category: "3",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 10",
+        amount: 10000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 11",
+        amount: 11000,
+        category: "2",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 12",
+        amount: 12000,
+        category: "3",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 13",
+        amount: 13000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 14",
+        amount: 14000,
+        category: "2",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 15",
+        amount: 15000,
+        category: "3",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 16",
+        amount: 16000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 17",
+        amount: 17000,
+        category: "2",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 18",
+        amount: 18000,
+        category: "3",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 19",
+        amount: 19000,
+        category: "1",
+        date: new Date(),
+    },
+    {
+        name: "Transaction 20",
+        amount: 20000,
+        category: "2",
+        date: new Date(),
+    },
 ];
 
 const DashboardPage: React.FC = () => {
@@ -51,6 +150,10 @@ const DashboardPage: React.FC = () => {
           ]}
           height={200}
         />
+        <div className="buttonContainer">
+            <button className="graphButton">Ver Tu Reporte</button>
+            <button className="graphButton">Registrar Transaciones</button>
+        </div>
       </div>
       <div className="expensesSection">
         <h2 className="expenssesTittle">Ultimas Transacciones</h2>

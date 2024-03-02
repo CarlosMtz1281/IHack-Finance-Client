@@ -7,11 +7,11 @@
   overflow-x: hidden;
   background-color: var(--backGround1);
 }
-.dashboardMainTittle{
-    font-size: 6vw;
-    margin-top: 5vh;
-    margin-left: 5vw;
-    margin-bottom: 5vh;
+.dashboardMainTittle {
+  font-size: 6vw;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  margin-bottom: 5vh;
 }
 .graphSection {
   margin-top: 5vh;
@@ -27,15 +27,34 @@
   color: var(--blackTxt);
   font-weight: 400;
   background-color: var(--backGround2);
-  height: 150vw;
+  height: auto;
   width: 100vw;
   padding: 5vw;
 }
 
-.expensesSection{
-    font-size: 5vw
+.expensesSection {
+  font-size: 5vw;
 }
 
 .transactionContainer {
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 5vw;
+  color: #ffffff;
+}
 
+.graphButton {
+  background-color: var(--accent1);
+  border: none;
+  border-radius: 10px;
+  padding: 1vw;
+  font-size: 4vw;
+  font-weight: 600;
+  width: 40vw;
+  height: 8vh;
+  color: #ffffff;
 }

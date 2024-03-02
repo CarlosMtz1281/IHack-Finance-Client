@@ -1,0 +1,36 @@
+
+.nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #151d71;
+    color: white;
+}
+
+.navOpen {
+    display: block;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    padding: 10px;
+}
+
+.burgerMenu {
+    cursor: pointer;
+    position: relative;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}

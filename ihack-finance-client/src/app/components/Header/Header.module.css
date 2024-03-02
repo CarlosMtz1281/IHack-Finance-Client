@@ -1,0 +1,14 @@
+
+.header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vh 0;
+    background-color: #1b2596;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    color: white;
+}

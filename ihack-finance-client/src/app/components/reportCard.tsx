@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../style/components/reportCard.css";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 interface ReportCardProps {
   category: string;
@@ -17,6 +20,8 @@ const ReportCard: React.FC<ReportCardProps> = ({
   recommendation,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const total = data + lastData * 2;
 
   const handleClick = () => {
     setIsExpanded(!isExpanded);
@@ -39,7 +44,21 @@ const ReportCard: React.FC<ReportCardProps> = ({
           )}
         </div>
       </div>
-      {isExpanded && <div className="message">Your message here</div>}
+      {isExpanded && (
+        <div className="flex flex-col justify-center items-center">
+          <div className="message">
+            {recommendation}
+          </div>
+          <div className="progress-container">
+            <ProgressBar style={{height: "20px", borderWidth: "2px"}}>
+              <ProgressBar variant="blue" now={lastData/total * 100} label={lastData} key={1} />
+              <ProgressBar variant="info" now={data/total * 100} label={data} key={2} />
+              
+            </ProgressBar>
+          </div>
+
+        </div>
+        )}
     </div>
   );
 };

@@ -5,6 +5,9 @@ import { SparkLineChart } from '@mui/x-charts/SparkLineChart';
 import ReportCard from '../../components/reportCard';
 import { BurgerNav } from '@/app/components/BurgerNav/BurgerNav';
 import Header from '@/app/components/Header/Header';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+
+
 
 const data = [
     {
@@ -47,7 +50,6 @@ const Page = () => {
                             lastData={item.lastData}
                             recommendation={item.recommendation}
                         />
-                        <div className='separator'/>
                     </div>
                 ))}
             </div>

@@ -54,9 +54,17 @@ const SignInPage: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-blue-900 to-white">
+        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-t from-blue-900 to-white">
             <div className="logo-font">
-                <div className={oxygen.className}>
+                <div>
+                    <Image
+                        src="/logo.png"
+                        width={50}
+                        height={50}
+                        alt="rueda"
+                    />
+                </div>
+                <div>
                     <p className="text-7xl text-white">Audita</p>
                 </div>
             </div>
@@ -70,20 +78,22 @@ const SignInPage: React.FC = () => {
                     </p>
 
                 </div>
-
-                <input
-                    type="text"
-                    placeholder="Email"
-                    className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <div className="inputContainer">
+                    <i className="icon">👤</i>
+                    <input
+                        type="text"
+                        placeholder="Email"
+                        className="inputs"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
                 <input
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder="Password"
-                    className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"
+                    className="inputs"
                 />
 
                 <div className="flex justify-end">

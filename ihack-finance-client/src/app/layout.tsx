@@ -18,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body >{children}</body>
+        <body className={inter.className}>{children}</body>
+        {/*<body className={oxygen.className}>{children}</body> */}
     </html>
   );
 }

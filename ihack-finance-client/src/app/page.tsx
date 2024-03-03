@@ -9,23 +9,30 @@ export default function Home() {
   return (
 
     <div>
-      <Header />
+      <Header number={1}/>
       <div className="flex flex-col justify-center items-center">
+        <div className={styles.bloque}></div>
         <div className={styles.background}>
           <div className={styles.imageCont2}>
             <div>
               <Image 
-                src="/ruedaCHi.png"
-                width={100}
-                height={200}
+                src="/logo.png"
+                width={50}
+                height={50}
                 alt="rueda"
               />
             </div>
-            <div className="text-white text-center text-5xl font-bold">
-              Sabritones
+            <div className="text-white text-center text-6xl font-bold align-bottom">
+              Audita
             </div>
           </div>
+          <div className={styles.bloque2}></div>
           <div className={styles.imageContainer}>
+            <button className={styles.signButton}>
+              <Link href={"/signin"}>
+                ¡Comienza ahora!
+              </Link>
+            </button>
             <Image 
               src="/backgroundLanding.png"
               width={844}
@@ -33,15 +40,23 @@ export default function Home() {
               alt="bg image" />
           </div>
         </div>
+        <div className="flex flex-col justify-center items-center">
+          <Image 
+            src="/stonks2.svg"
+            width={80}
+            height={80}
+            alt="stonks"
+            style={{paddingTop: "5vh"}}
+          />
+          <div className="text-xl pt-7 font-bold">
+            TU AUDITORIA PERSONAL
+          </div>
+          <div className=" text-base px-6 py-7 text-center">
+          Optimiza tu gestión financiera con nuestra plataforma diseñada para empoderarte en el manejo de tus recursos económicos.
+          </div>
+        </div>
+
         
-        <p className="text-3xl pt-5 pb-8 px-6 text-left">
-          Tu auditorio financiero personal para tomar control de tu dinero.
-        </p>
-        <button className={styles.signButton}>
-          <Link href={"/signin"}>
-            ¡Comienza ahora!
-          </Link>
-        </button>
       </div>
     </div>
   );

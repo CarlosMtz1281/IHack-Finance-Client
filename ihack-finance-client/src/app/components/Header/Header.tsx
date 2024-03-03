@@ -6,14 +6,17 @@ import styles from './Header.module.css'
 import {BurgerNav} from '../BurgerNav/BurgerNav'
 
 
-const Header = () => {
+const Header = ({number}: {number: number}) => {
 
     return (
         <div className={styles.header}>
             <div className={styles.logo}>
-                Logo
+                Audita
             </div>
-            <BurgerNav sections={2}/>
+            <div className={styles.burger}>
+                <BurgerNav sections={number}/>
+
+            </div>
         </div>
     )
 }

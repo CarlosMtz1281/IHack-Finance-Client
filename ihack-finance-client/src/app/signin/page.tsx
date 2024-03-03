@@ -5,14 +5,47 @@ import Image from "next/image";
 import Link from "next/link";
 import { Oxygen } from "next/font/google";
 import "../style/signin.css";
-import "../style/constants.css";
 
 const oxygen = Oxygen({ weight: '400', subsets: ["latin"] });
+import { useState } from "react";
 
 const SignInPage: React.FC = () => {
-    const handleSignIn = () => {
-        // TODO: Implement sign-in logic
-        window.location.href = "/dashboard";
+
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const url = "http://34.168.188.169:3000/checkUser";
+
+    const handleSignIn = async () => {
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, password })
+            });
+            const data = await response.json();
+
+            if (data.valid === true) {
+                ;
+                console.log("Sign-in successful");
+                console.log(data); // Print the parsed response
+                //save id_miembro
+                localStorage.setItem('id_miembro', data.id_miembro);
+                localStorage.setItem('nombre', data.nombre);
+                window.location.href = "../dashboard";
+                // Redirect to dashboard
+            } else {
+                // Handle error
+                console.error("Sign-in failed");
+                alert("An error occurred");
+
+            }
+        } catch (error) {
+            console.error("An error occurred", error);
+        }
     };
 
     const handleGoBack = () => {
@@ -42,8 +75,12 @@ const SignInPage: React.FC = () => {
                     type="text"
                     placeholder="Email"
                     className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder="Password"
                     className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"

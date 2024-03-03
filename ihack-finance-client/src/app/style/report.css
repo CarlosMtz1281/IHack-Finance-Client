@@ -1,0 +1,15 @@
+
+.headerSection{
+    height: 40vh;
+    width: 100vw;
+    background-color: var(--backGround1);
+    color: var(--whiteTxt);
+}
+.chartWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 80vw;
+    margin-left: 5vw;
+}

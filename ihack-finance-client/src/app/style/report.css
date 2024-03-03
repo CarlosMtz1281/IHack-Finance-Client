@@ -1,23 +1,36 @@
 
 .headerSection{
-    height: 40vh;
+    height: 30vh;
     width: 100vw;
     background-color: var(--backGround1);
     color: var(--whiteTxt);
+    display: block;
 }
 .mainTittle{
     font-size: 6vw;
     margin-left: 5vw;
+}
+.subTittle{
+    font-size: 4vw;
+    margin-left: 5vw;
+
+}
+.topHeader{
+    padding-top: 5vw;
+}
+.cardContainer{
+    margin-top: 5vh;
 }
 
 .chartWrap{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
-    width: 80vw;
+    height: 30vh;
+    width: 90vw;
     margin-left: 5vw;
-}
+    margin-top: -10vh;
+  }
 
 .resumenTittle{
     font-size: 7vw;
@@ -28,4 +41,5 @@
     font-size: 5vw;
     margin-left: 5vw;
     margin-top: 2vh;
+    margin-bottom: 5vh;
 }

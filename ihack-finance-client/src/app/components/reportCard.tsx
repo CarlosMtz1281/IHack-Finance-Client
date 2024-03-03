@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 interface ReportCardProps {
   category: string;
   data: number;
@@ -28,7 +29,7 @@ const ReportCard: React.FC<ReportCardProps> = ({
 
   return (
     <div
-      className={`card ${isExpanded ? "expanded" : ""}`}
+      className={`card2 ${isExpanded ? "expanded" : ""}`}
       onClick={handleClick}
     >
       <div className="header">
@@ -44,14 +45,14 @@ const ReportCard: React.FC<ReportCardProps> = ({
         </div>
       </div>
       {isExpanded && (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center ">
           <div className="message">
-            {data} and {lastData}
+            This Month: {data},  Last Month: {lastData}
           </div>
           <div className="progressBar">
               <ProgressBar style={{height: "20px", borderWidth: "2px"}}>
                 <ProgressBar variant="blue" now={lastData/total * 100} label={lastData} key={1} />
-                <ProgressBar variant="info" now={data/total * 100} label={data} key={2} />  
+                <ProgressBar variant="info" now={data/total * 100} label={data} key={2} />
               </ProgressBar>
           </div>
       </div>)}

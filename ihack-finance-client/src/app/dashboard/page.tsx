@@ -7,6 +7,7 @@ import Header from "../components/Header/Header";
 import { useState } from "react";
 
 import Transaction from "../components/transactions";
+import Navbar from "../components/NavBar";
 
 
 
@@ -35,7 +36,7 @@ const DashboardPage: React.FC = () => {
   return (
     <div className="dashboardWrap">
 
-      <Header number={2} />
+      <Navbar navType={2} />
       <h1 className="dashboardMainTittle">Bienvenido {localStorage.getItem("nombre")}</h1>
       <h3 className="dashboardSubTittle">Tus Gastos del mes</h3>
       {/* Add your dashboard components and content here */}

@@ -8,16 +8,18 @@ import Header from "@/app/components/Header/Header";
 import { useEffect } from "react";
 import { useState } from "react";
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import NavBar from "@/app/components/NavBar";
 
 
 const Page = () => {
     const [data, setData] = useState([{}]);
     const [resumen, setResumen] = useState("");
+    const [history, setHistory] = useState([{}])
 
   const url = "http://34.168.188.169:3000/reportesMiembro";
   useEffect(() => {
     const fetchData = async () => {
-      try {
+
         const response = await fetch(url, {
           method: "GET",
           headers: {
@@ -29,7 +31,15 @@ const Page = () => {
         // Use the response here
         const data = await response.json();
         console.log(data);
-        setResumen(data[1].resumen);
+        //guardanmos data en el history
+        // Assuming data is your array
+        let sortedData = data.sort((a, b) => new Date(a.fecha).getTime() - new Date(b.fecha).getTime());
+
+        let ingresosData = sortedData.map(item => item.total_ingresos);
+
+        console.log(ingresosData);
+        setHistory(ingresosData);
+        setResumen(data[3].resumen);
         const mes2 = JSON.parse(data[1].datos);
         const mes1 = JSON.parse(data[0].datos);
         console.log("mes2", mes2);
@@ -46,9 +56,7 @@ const Page = () => {
 
 
         setData(result);
-      } catch (error) {
-        console.error(error);
-      }
+
     };
 
     fetchData();
@@ -56,15 +64,17 @@ const Page = () => {
 
   return (
     <div>
-      <Header number={2} />
-
+        <NavBar navType={2} />
       <div className="headerSection">
+        <div className="topHeader">
         <h1 className="mainTittle">Reporte Mensual</h1>
-        <div className="chartWrap">
-          <SparkLineChart data={[1, 4, 2, 5, 7, 2, 4, 6]} height={100} />
+        <h4 className="subTittle">Tus Ingresos en los ultimos meses</h4>
+
         </div>
+        <div className="chartWrap">
+        <SparkLineChart data={history} height={100} />        </div>
       </div>
-      <div>
+      <div className="cardContainer">
         {data.map((item, index) => (
           <div key={index}>
             <ReportCard

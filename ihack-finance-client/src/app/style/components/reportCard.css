@@ -1,10 +1,13 @@
-.card{
-    height: 8vh;
-    margin-bottom: 2.5vh;
-    border-radius: 20px;
-    width: 90vw;
-    margin-left: 5vw;
-    transition: height 0.5s;
+.card2{
+  height: 10vh;
+  margin-bottom: 2.5vh;
+  border-radius: 5px;
+  width: 90vw;
+  margin-left: 5vw;
+  /*transition animation*/
+  transition: height 0.5s;
+  /*box shadow*/
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 .header{
     align-items: center;
@@ -15,16 +18,17 @@
     font-size: 5vw;
     justify-content: center;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 1.5vh;
 }
 .headerLeft {
     display: flex;
     margin-left: 5vw;
     align-items: center;
+    margin-top: 2vh;
 
 }
-.card.expanded {
-    height: 15vh;
+.card2.expanded {
+    height: 18vh;
     transition: height 0.5s;
   }
   .separator{
@@ -43,9 +47,12 @@
   }
 
   .progressBar {
-    width: 70vw;
+    width: 80vw;
+    margin-left: 5vw;
   }
 
   .message{
-    margin-left: -40vw;
+    margin-top: 2vh;
+    margin-left: 5vw;
+    margin-bottom: 1vh;
   }

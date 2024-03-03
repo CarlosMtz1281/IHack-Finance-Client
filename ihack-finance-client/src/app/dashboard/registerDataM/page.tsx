@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { InputLabel } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Header from "@/app/components/Header/Header";
+import Navbar from "@/app/components/NavBar";
 
 const Registro: React.FC = () => {
   const [category, setCategory] = useState("");
@@ -87,7 +88,7 @@ const Registro: React.FC = () => {
 
   return (
     <div className="container">
-      <Header number={2} />
+      <Navbar navType={2} />
       <header className="header">
         <h1 className="mainTittle">Registra una Nueva Transacción</h1>
       </header>
@@ -109,7 +110,7 @@ const Registro: React.FC = () => {
             value={category}
             label="Categoria"
             onChange={handleSelectChange}
-            style={{ width: "50vw" }}
+            style={{ width: "64vw" }}
           >
             <MenuItem value={"Entretenimiento"}>Entretenimiento</MenuItem>
             <MenuItem value={"Ingresos"}>Ingresos</MenuItem>
@@ -139,8 +140,9 @@ const Registro: React.FC = () => {
             style={{ width: "90vw", marginTop: "20px" }}
           />
         </div>
-        <h2>Registro Automatico con PDF</h2>
+        <h2 className="subtittle">Registro Automatico con PDF</h2>
         <input
+          className="fileInput"
           type="file"
           accept=".pdf"
           onChange={(event) => {

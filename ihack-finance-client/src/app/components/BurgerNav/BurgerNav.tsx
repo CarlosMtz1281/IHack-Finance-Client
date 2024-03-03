@@ -36,6 +36,11 @@ export const BurgerNav = ({sections}: {sections: any}) => {
                                 </Link>
                             </li>
                             <li>
+                                <Link href='/dashboard'>
+                                    Dashboard
+                                </Link>
+                            </li>
+                            <li>
                                 Cerrar Sesion
                             </li>
                         </>

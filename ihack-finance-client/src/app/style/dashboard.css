@@ -6,7 +6,9 @@
   width: 100vw;
   overflow-x: hidden;
   background-color: var(--backGround1);
+
 }
+
 .dashboardMainTittle {
   font-size: 6vw;
   margin-top: 5vh;
@@ -37,6 +39,7 @@
 }
 
 .transactionContainer {
+
 }
 .buttonContainer {
   display: flex;

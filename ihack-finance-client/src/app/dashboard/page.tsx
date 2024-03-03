@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { use, useEffect } from "react";
 import Link from "next/link";
 import { PieChart } from "@mui/x-charts/PieChart";
 import "../style/dashboard.css";
+import Header from "../components/Header/Header";
+import { useState } from "react";
 
 import Transaction from "../components/transactions";
 
@@ -130,8 +132,31 @@ const transactions = [
 ];
 
 const DashboardPage: React.FC = () => {
+  const url = 'http://34.168.188.169:3000/movimientos/1'
+  const [List, setList] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await response.json();
+        setList(data); // Update the List state with the fetched data
+      } catch (error) {
+        console.error("An error occurred", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="dashboardWrap">
+
+      <Header number={2} />
       <h1 className="dashboardMainTittle">Bienvenido Carlos</h1>
       {/* Add your dashboard components and content here */}
       <div className="graphSection">
@@ -155,10 +180,11 @@ const DashboardPage: React.FC = () => {
           height={200}
         />
         <div className="buttonContainer">
+          <Link href={"/dashboard/report"}>
             <button className="graphButton">Ver Tu Reporte</button>
+          </Link>
             <Link href={"/dashboard/registerDataM"}>
                 <button className="graphButton">Registrar Transaciones</button>
-
             </Link>
         </div>
       </div>
@@ -167,15 +193,15 @@ const DashboardPage: React.FC = () => {
 
         <div className="transactionContainer">
           {/* COMPONENT */}
-          {transactions.map((transaction, index) => (
-            <Transaction
-              key={index}
-              name={transaction.name}
-              amount={transaction.amount}
-              category={transaction.category}
-              date={transaction.date}
-            />
-          ))}
+          {List.map((transaction, index) => (
+        <Transaction
+          key={index}
+          name={transaction.nombre_lugar}
+          amount={transaction.cantidad}
+          category={transaction.tipo}
+          date={transaction.fecha}
+        />
+      ))}
         </div>
       </div>
     </div>

@@ -38,11 +38,17 @@ const DashboardPage: React.FC = () => {
     fetchData();
   }, []);
 
+  let name = " "
+  if (typeof window !== 'undefined') {
+    // Perform localStorage action
+    name = localStorage.getItem("nombre") || ""
+   }
+
   return (
     <div className="dashboardWrap">
 
       <Navbar navType={2} />
-      <h1 className="dashboardMainTittle">Bienvenido {localStorage.getItem("nombre")}</h1>
+      <h1 className="dashboardMainTittle">Bienvenido {}</h1>
       <h3 className="dashboardSubTittle">Tus Gastos del mes</h3>
       {/* Add your dashboard components and content here */}
       <div className="graphSection">

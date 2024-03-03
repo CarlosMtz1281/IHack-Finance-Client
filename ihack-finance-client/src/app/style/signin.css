@@ -1,0 +1,95 @@
+.contAll {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f2f2f2;
+
+}
+
+.imageCont2{
+    display: flex;
+    padding-left: 5vw;
+    padding-top: 5vh;
+    flex-direction: row;
+    top: 0;
+}
+
+.sign-button{
+    background-color: #275485;
+    color: white;
+    padding: 14px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 55%;
+    opacity: 0.9;
+    border-radius: 50px;
+}
+
+.inputs{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+.logo-font{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.inputContainer {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+
+  .inputGroup {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f7b9a4;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Make padding-left larger to accommodate the icon */
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    color: rgb(24, 47,76);
+    background-color: rgb(243,244,246);
+    
+  }
+
+  .loginText{
+    text-align: left;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 0.5rem 0;
+    color: rgb(24, 47,76);
+  }
+
+  .descText{
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: rgb(24, 47,76);
+  }

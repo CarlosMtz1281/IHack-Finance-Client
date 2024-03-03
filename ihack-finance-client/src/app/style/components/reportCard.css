@@ -1,0 +1,58 @@
+.card2{
+  height: 10vh;
+  margin-bottom: 2.5vh;
+  border-radius: 5px;
+  width: 90vw;
+  margin-left: 5vw;
+  /*transition animation*/
+  transition: height 0.5s;
+  /*box shadow*/
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.categoryName{
+    font-size: 5vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5vh;
+}
+.headerLeft {
+    display: flex;
+    margin-left: 5vw;
+    align-items: center;
+    margin-top: 2vh;
+
+}
+.card2.expanded {
+    height: 18vh;
+    transition: height 0.5s;
+  }
+  .separator{
+    display: block;
+    height: 1px;
+    width: 80vw;
+    margin-left: 5vw;
+
+    background-color: var(--blackTxt);
+  }
+
+  .headerRight {
+    display: flex;
+    margin-top: 2.5vh;
+    align-items: right;
+  }
+
+  .progressBar {
+    width: 80vw;
+    margin-left: 5vw;
+  }
+
+  .message{
+    margin-top: 2vh;
+    margin-left: 5vw;
+    margin-bottom: 1vh;
+  }

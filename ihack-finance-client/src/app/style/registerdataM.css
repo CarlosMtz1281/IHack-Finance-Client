@@ -1,0 +1,105 @@
+/* ../../styles/registerDataM.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.header {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 150%;
+  background-color: var(--backGround1);
+  height: 20vh;
+  justify-content: center;
+}
+
+.mainTittle{
+  color: var(--whiteTxt);
+  margin-top: 5vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40vh;
+  background-color: var(--backGround2);
+  margin-left: 5vw;
+}
+
+.input {
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.inputContainer {
+  display: flex;
+  margin-top: 2vh;
+  width: 100%;
+
+}
+
+.select {
+  flex: 1;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  width: 70vw;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  width: 40vw;
+  height: 8vh;
+  border-radius: 5px;
+  color: var(blackTxt);
+  cursor: pointer;
+  background-color: var(--whiteTxt);
+}
+
+
+.footerBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+  background-color: var(--backGround2);
+
+}
+
+
+
+.input{
+  border: 2px solid #c1bcbc; /* Delineado con color gris claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  border-radius: 2px; /* Bordes redondeados para suavizar las esquinas */
+}
+
+
+.shadowBox {
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  border-radius: 2px; /* Bordes redondeados, opcional */
+}
+
+.subtittle{
+  margin-top: 3vh;
+}
+
+.fileInput{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.chartWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 90vw;
+  margin-left: 10vw;
+}

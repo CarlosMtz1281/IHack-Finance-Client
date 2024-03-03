@@ -1,0 +1,52 @@
+.signButton {
+    background-color: #1a288c;
+    color: #fcfcfc;
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-size: 25px;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+}
+
+.bloque{
+    height: 6vh;
+    width: 100vw;
+    background-color: #acd8e6;
+}
+
+.bloque2{
+    height: 6vh;
+    width: 100vw;
+    background-color: #acd8e6;
+}
+
+.background {
+    background-color: #acd8e6;
+    width: 100%;
+    position: relative;
+}
+
+.imageCont2{
+    display: flex;
+    margin-top: 20px;
+    padding: 0vw 2vh;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.imageContainter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    bottom: 0;
+    margin-bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}

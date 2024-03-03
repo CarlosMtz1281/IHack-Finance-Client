@@ -7,6 +7,7 @@ import { BurgerNav } from "@/app/components/BurgerNav/BurgerNav";
 import Header from "@/app/components/Header/Header";
 import { useEffect } from "react";
 import { useState } from "react";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
 const Page = () => {
@@ -72,7 +73,6 @@ const Page = () => {
               lastData={item.mes1}
               recommendation={item.recommendation}
             />
-            <div className="separator" />
           </div>
         ))}
       </div>

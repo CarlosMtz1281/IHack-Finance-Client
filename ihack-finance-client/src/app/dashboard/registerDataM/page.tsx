@@ -34,10 +34,15 @@ const Registro: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+    let key = "id_miembro";
+    if (typeof window !== 'undefined') {
+      // Perform localStorage action
+      key = localStorage.getItem("id_miembro") || ""
+    }
     if(file){
       const formData = new FormData();
       formData.append("pdf", file);
-      formData.append("id_miembro", localStorage.getItem("id_miembro")!);
+      formData.append("id_miembro", key);
 
 
       try {
@@ -71,7 +76,7 @@ const Registro: React.FC = () => {
         tipo: category,
         fechaMovimiento: date ? date : "",
         gasto: gasto,
-        id_miembro: localStorage.getItem("id_miembro"),
+        id_miembro: key,
       }),
     });
 

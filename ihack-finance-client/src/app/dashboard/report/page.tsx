@@ -19,12 +19,17 @@ const Page = () => {
     const url = "http://34.168.188.169:3000/reportesMiembro";
     useEffect(() => {
         const fetchData = async () => {
-
+            let key = "id_miembro";
+            if (typeof window !== 'undefined') {
+                // Perform localStorage action
+                key = localStorage.getItem("id_miembro") || ""
+              }
                 const response = await fetch(url, {
+
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        id_miembro: localStorage.getItem("id_miembro") || "",
+                        id_miembro: key,
                     },
                 });
 

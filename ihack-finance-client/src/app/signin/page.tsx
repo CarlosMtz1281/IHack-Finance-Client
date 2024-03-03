@@ -33,8 +33,12 @@ const SignInPage: React.FC = () => {
                 console.log("Sign-in successful");
                 console.log(data); // Print the parsed response
                 //save id_miembro
-                localStorage.setItem('id_miembro', data.id_miembro);
+                if (typeof window !== 'undefined') {
+                    // Perform localStorage action
+                    localStorage.setItem('id_miembro', data.id_miembro);
                 localStorage.setItem('nombre', data.nombre);
+                  }
+
                 window.location.href = "../dashboard";
                 // Redirect to dashboard
             } else {

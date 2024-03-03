@@ -9,11 +9,16 @@ import { useState } from "react";
 import Transaction from "../components/transactions";
 import Navbar from "../components/NavBar";
 
-
+interface Transaction {
+  nombre_lugar: string;
+  cantidad: number;
+  tipo: string;
+  fecha: string;
+}
 
 const DashboardPage: React.FC = () => {
   const url = 'http://34.168.188.169:3000/movimientos/1'
-  const [List, setList] = useState([]);
+  const [List, setList] = useState<Transaction[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

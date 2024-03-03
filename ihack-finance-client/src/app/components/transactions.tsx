@@ -6,7 +6,7 @@ interface TransactionProps {
   name: string;
   amount: number;
   category: string;
-  date: Date;
+  date: string;
 }
 
 const Transaction: React.FC<TransactionProps> = ({
@@ -16,7 +16,7 @@ const Transaction: React.FC<TransactionProps> = ({
   date,
 }) => {
 
-  const categoryColors = {
+  const categoryColors: { [key: string]: string } = {
     "Entretenimiento": "#6300a5",
     "Transporte": "#FF5733",
     "Varios": "#C70039",

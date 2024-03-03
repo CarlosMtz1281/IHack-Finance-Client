@@ -146,7 +146,7 @@ const Registro: React.FC = () => {
           type="file"
           accept=".pdf"
           onChange={(event) => {
-            const file = event.target.files[0];
+            const file = event.target.files ? event.target.files[0] : null;
             if (file) {
               // Handle the file here
               setFile(file);

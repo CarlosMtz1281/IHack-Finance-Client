@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 import "../style/components/NavBar.css";
 
-function Navbar({ navType }) {
+function Navbar({ navType }: { navType: number }) {
         const [active, setActive] = useState("nav__menu");
         const [icon, setIcon] = useState("nav__toggler");
         const navToggle = () => {

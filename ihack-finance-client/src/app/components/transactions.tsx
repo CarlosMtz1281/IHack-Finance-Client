@@ -30,8 +30,8 @@ const Transaction: React.FC<TransactionProps> = ({
       <div className="headerLeft">
         <div className="transaction-name">{name}</div>
         <div className="transaction-date">
-          {new Date(date).toLocaleDateString()}
-        </div>
+          {new Date(date).toLocaleDateString('en-GB')}
+               </div>
             </div>
       <div className="transaction-amount">${amount}</div>
     </div>

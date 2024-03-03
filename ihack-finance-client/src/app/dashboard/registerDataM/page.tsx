@@ -10,26 +10,75 @@ import TextField from "@mui/material/TextField";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { InputLabel } from "@mui/material";
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Header from "@/app/components/Header/Header";
 
 const Registro: React.FC = () => {
   const [category, setCategory] = useState("");
+  const [date, setDate] = useState<string>(new Date().toISOString());
+  const [amount, setAmount] = useState(0);
+  const [name, setName] = useState("");
+
+  const url = "http://34.168.188.169:3000/movimientoManual";
+
   const handleSelectChange = (event: SelectChangeEvent) => {
-    setCategory(event.target.value as string);
+    setCategory(event.target.value);
   };
+
+  const handleDate = (date: Date | null) => {
+    if (date) {
+      setDate(date.toISOString());
+    }
+  };
+
+  const handleSubmit = async () => {
+    var gasto = false;
+
+    if (category !== "Ingresos") {
+      gasto = true;
+    }
+    console.log(typeof date);
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          nombre_lugar: name,
+          cantidad: amount,
+          tipo: category,
+          fechaMovimiento: date ? date : "",
+          gasto: gasto,
+          id_miembro: localStorage.getItem("id_miembro"),
+      }),
+  });
+
+  if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const responseBody = await response.text();
+  console.log("Response Body:", responseBody);
+
+  alert("Registro exitoso");
+  }
+
   return (
     <div className="container">
+      <Header number={2} />
       <header className="header">
-        <h1 className="mainTittle">Registra una Nueva Transacion</h1>
+        <h1 className="mainTittle">Registra una Nueva Transacción</h1>
       </header>
 
       <div className="main">
         <TextField
           id="outlined-basic"
-          label="Outlined"
+          label="Nombre de Comercio"
           variant="outlined"
           style={{ width: "90vw" }}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <div className="inputContainer Box">
           <Select
@@ -43,20 +92,18 @@ const Registro: React.FC = () => {
             <MenuItem value={"Entretenimiento"}>Entretenimiento</MenuItem>
             <MenuItem value={"Ingresos"}>Ingresos</MenuItem>
 
-            <MenuItem value={"Comidas"}>Comidas</MenuItem>
+            <MenuItem value={"Varios"}>Varios</MenuItem>
             <MenuItem value={"Transporte"}>Transporte</MenuItem>
-            <MenuItem value={"Profesionales"}>Profesionales</MenuItem>
-            <MenuItem value={"Salud"}>Salud</MenuItem>
-            <MenuItem value={"Generales"}>Generales</MenuItem>
+            <MenuItem value={"Basicos"}>Basicos</MenuItem>
+            <MenuItem value={"Restaurantes"}>Restaurantes</MenuItem>
           </Select>
           {/*NUMBER TEXTFIELD */}
-          <DatePicker label="Fecha" />
+          <DatePicker label="Fecha" onChange={handleDate} />
 
-
-          <br/>
+          <br />
         </div>
         <div>
-        <TextField
+          <TextField
             id="outlined-number"
             label="Number"
             type="text"
@@ -64,20 +111,21 @@ const Registro: React.FC = () => {
               shrink: true,
             }}
             onChange={(event) => {
-              const onlyNums = event.target.value.replace(/[^0-9]/g, '');
-              event.target.value = onlyNums;
+              const onlyNums = event.target.value.replace(/[^0-9]/g, "");
+              setAmount(parseInt(onlyNums, 10));
             }}
-            style={{ width: "90vw", marginTop: "20px"}}
+            style={{ width: "90vw", marginTop: "20px" }}
           />
         </div>
-
       </div>
 
       <div className="footerBox">
         <Link href={"/dashboard"}>
-          <button className="button red">Terminar</button>
+          <button className="button">Terminar</button>
         </Link>
-        <button className="button blue">Siguiente registro</button>
+        <button className="button" onClick={handleSubmit}>
+          Siguiente registro
+        </button>
       </div>
     </div>
   );

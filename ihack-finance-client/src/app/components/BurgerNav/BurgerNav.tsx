@@ -10,6 +10,10 @@ export const BurgerNav = ({sections}: {sections: any}) => {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
+    const handleLogOut = () => {
+        localStorage.removeItem('id_miembro');
+        window.location.href = "../";
+    }
 
     return (
         <div>
@@ -40,7 +44,7 @@ export const BurgerNav = ({sections}: {sections: any}) => {
                                     Dashboard
                                 </Link>
                             </li>
-                            <li>
+                            <li onClick={handleLogOut}>
                                 Cerrar Sesion
                             </li>
                         </>

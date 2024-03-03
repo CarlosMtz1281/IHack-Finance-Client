@@ -8,128 +8,7 @@ import { useState } from "react";
 
 import Transaction from "../components/transactions";
 
-const transactions = [
-    {
-        name: "Transaction 1",
-        amount: 1000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 2",
-        amount: 2000,
-        category: "2",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 3",
-        amount: 3000,
-        category: "3",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 4",
-        amount: 4000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 5",
-        amount: 5000,
-        category: "2",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 6",
-        amount: 6000,
-        category: "3",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 7",
-        amount: 7000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 8",
-        amount: 8000,
-        category: "2",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 9",
-        amount: 9000,
-        category: "3",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 10",
-        amount: 10000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 11",
-        amount: 11000,
-        category: "2",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 12",
-        amount: 12000,
-        category: "3",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 13",
-        amount: 13000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 14",
-        amount: 14000,
-        category: "2",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 15",
-        amount: 15000,
-        category: "3",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 16",
-        amount: 16000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 17",
-        amount: 17000,
-        category: "2",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 18",
-        amount: 18000,
-        category: "3",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 19",
-        amount: 19000,
-        category: "1",
-        date: new Date(),
-    },
-    {
-        name: "Transaction 20",
-        amount: 20000,
-        category: "2",
-        date: new Date(),
-    },
-];
+
 
 const DashboardPage: React.FC = () => {
   const url = 'http://34.168.188.169:3000/movimientos/1'
@@ -157,7 +36,8 @@ const DashboardPage: React.FC = () => {
     <div className="dashboardWrap">
 
       <Header number={2} />
-      <h1 className="dashboardMainTittle">Bienvenido Carlos</h1>
+      <h1 className="dashboardMainTittle">Bienvenido {localStorage.getItem("nombre")}</h1>
+      <h3 className="dashboardSubTittle">Tus Gastos del mes</h3>
       {/* Add your dashboard components and content here */}
       <div className="graphSection">
         <PieChart
@@ -172,9 +52,10 @@ const DashboardPage: React.FC = () => {
                 { id: 4, value: 20, label: "Restaurantes" },
               ],
               cx: 120,
-              innerRadius: 10,
-              paddingAngle: 2,
-              cornerRadius: 5,
+              innerRadius: 15,
+              paddingAngle: 3,
+              cornerRadius: 0
+              ,
             },
           ]}
           height={200}

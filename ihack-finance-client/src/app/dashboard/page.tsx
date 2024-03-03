@@ -19,6 +19,7 @@ interface Transaction {
 const DashboardPage: React.FC = () => {
   const url = 'http://34.168.188.169:3000/movimientos/1'
   const [List, setList] = useState<Transaction[]>([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,7 +39,7 @@ const DashboardPage: React.FC = () => {
     fetchData();
   }, []);
 
-  let name = " "
+  let name = 'Nicolas';
   if (typeof window !== 'undefined') {
     // Perform localStorage action
     name = localStorage.getItem("nombre") || ""
@@ -48,7 +49,7 @@ const DashboardPage: React.FC = () => {
     <div className="dashboardWrap">
 
       <Navbar navType={2} />
-      <h1 className="dashboardMainTittle">Bienvenido {}</h1>
+      <h1 className="dashboardMainTittle">Bienvenido {name}</h1>
       <h3 className="dashboardSubTittle">Tus Gastos del mes</h3>
       {/* Add your dashboard components and content here */}
       <div className="graphSection">
@@ -85,17 +86,19 @@ const DashboardPage: React.FC = () => {
         <h2 className="expenssesTittle">Ultimas Transacciones</h2>
 
         <div className="transactionContainer">
-          {/* COMPONENT */}
-          {List.map((transaction, index) => (
-        <Transaction
-          key={index}
-          name={transaction.nombre_lugar}
-          amount={transaction.cantidad}
-          category={transaction.tipo}
-          date={transaction.fecha}
-        />
-      ))}
-        </div>
+    {/* COMPONENT */}
+    {List.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime())
+        .map((transaction, index) => (
+            <Transaction
+                key={index}
+                name={transaction.nombre_lugar}
+                amount={transaction.cantidad}
+                category={transaction.tipo}
+                date={transaction.fecha}
+            />
+        ))
+    }
+</div>
       </div>
     </div>
   );

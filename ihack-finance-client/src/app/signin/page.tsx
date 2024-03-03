@@ -54,8 +54,8 @@ const SignInPage: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-t from-blue-900 to-white">
-            <div className="logo-font">
+        <div className="contAll">
+            <div className="imageCont2">
                 <div>
                     <Image
                         src="/logo.png"
@@ -64,20 +64,35 @@ const SignInPage: React.FC = () => {
                         alt="rueda"
                     />
                 </div>
-                <div>
-                    <p className="text-7xl text-white">Audita</p>
-                </div>
             </div>
-            <div className=" w-64 flex flex-col justify-between mb-32">
+            <div className=" w-64 flex flex-col justify-center align-center mb-32 h-screen ml-16">
                 <div className="">
-                    <p className="text-left font-bold text-3xl py-2 text-white">
+                    <p className="loginText">
                         Login
                     </p>
-                    <p className="text-sm text-white mb-5">
+                    <p className="descText">
                         Ingresa tus datos para continuar
                     </p>
 
                 </div>
+
+                <div className="inputGroup">
+                    <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <path d="M20 8v6M23 11h-6"></path>
+                    </svg>
+                    <input type="text" placeholder="Username" className="inputField" />
+                </div>
+                <div className="inputGroup">
+                    <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <input type="password" placeholder="Password" className="inputField" />
+                </div>
+
+                {/*
                 <div className="inputContainer">
                     <i className="icon">👤</i>
                     <input
@@ -95,6 +110,7 @@ const SignInPage: React.FC = () => {
                     placeholder="Password"
                     className="inputs"
                 />
+                */}
 
                 <div className="flex justify-end">
                     <button
@@ -108,7 +124,7 @@ const SignInPage: React.FC = () => {
                     </button>
                 </div>
 
-                <div className="flex justify-center -mb-96 py-44">
+                <div className="flex justify-center -mb-80 py-44">
                     <button
                         onClick={handleGoBack}
                         className="w-full px-4 py-2 text-blue-500 rounded-md"

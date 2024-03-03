@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import "../style/components/reportCard.css";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -39,7 +39,7 @@ const ReportCard: React.FC<ReportCardProps> = ({
           )}
         </div>
       </div>
-      {isExpanded && <div className="message">Your message here</div>}
+      {isExpanded && <div className="message">{data} and {lastData}</div>}
     </div>
   );
 };

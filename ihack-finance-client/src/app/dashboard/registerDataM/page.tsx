@@ -18,6 +18,7 @@ const Registro: React.FC = () => {
   const [date, setDate] = useState<string>(new Date().toISOString());
   const [amount, setAmount] = useState(0);
   const [name, setName] = useState("");
+  const [file, setFile] = useState<File | null>(null);
 
   const url = "http://34.168.188.169:3000/movimientoManual";
 
@@ -32,6 +33,25 @@ const Registro: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+    if(file){
+      const formData = new FormData();
+      formData.append("pdf", file);
+      formData.append("id_miembro", localStorage.getItem("id_miembro")!);
+
+
+      try {
+        const response1 = await fetch("http://34.168.188.169:3000/movimientoPDF" , {
+          method: "POST",
+          body: formData,
+        });
+        console.log(response1);
+      }
+      catch (error) {
+        console.error("An error occurred", error);
+      }
+    }else{
+
+    //!!!!!!!!!!!
     var gasto = false;
 
     if (category !== "Ingresos") {
@@ -42,27 +62,28 @@ const Registro: React.FC = () => {
     const response = await fetch(url, {
       method: "POST",
       headers: {
-          "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-          nombre_lugar: name,
-          cantidad: amount,
-          tipo: category,
-          fechaMovimiento: date ? date : "",
-          gasto: gasto,
-          id_miembro: localStorage.getItem("id_miembro"),
+        nombre_lugar: name,
+        cantidad: amount,
+        tipo: category,
+        fechaMovimiento: date ? date : "",
+        gasto: gasto,
+        id_miembro: localStorage.getItem("id_miembro"),
       }),
-  });
+    });
 
-  if (!response.ok) {
+    if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
-  }
+    }
 
-  const responseBody = await response.text();
-  console.log("Response Body:", responseBody);
+    const responseBody = await response.text();
+    console.log("Response Body:", responseBody);
+    }
 
-  alert("Registro exitoso");
-  }
+    alert("Registro exitoso");
+  };
 
   return (
     <div className="container">
@@ -72,6 +93,7 @@ const Registro: React.FC = () => {
       </header>
 
       <div className="main">
+        <h2>Registro Manual</h2>
         <TextField
           id="outlined-basic"
           label="Nombre de Comercio"
@@ -117,6 +139,18 @@ const Registro: React.FC = () => {
             style={{ width: "90vw", marginTop: "20px" }}
           />
         </div>
+        <h2>Registro Automatico con PDF</h2>
+        <input
+          type="file"
+          accept=".pdf"
+          onChange={(event) => {
+            const file = event.target.files[0];
+            if (file) {
+              // Handle the file here
+              setFile(file);
+            }
+          }}
+        />
       </div>
 
       <div className="footerBox">

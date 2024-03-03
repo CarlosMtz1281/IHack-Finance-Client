@@ -7,12 +7,14 @@
     background-color: var(--backGround4);
     color: white;
     z-index: 9999; /* or any high number */
+    transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
 
 }
 .navOpen {
     display: block;
     transition: all 0.3s ease-in-out;
+    transform: translateX(0);
 }
 
 .nav ul {

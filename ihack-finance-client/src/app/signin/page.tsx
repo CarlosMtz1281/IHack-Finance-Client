@@ -29,8 +29,9 @@ const SignInPage: React.FC = () => {
                 console.log(data); // Print the parsed response
                 //save id_miembro
                 localStorage.setItem('id_miembro', data.id_miembro);
+                localStorage.setItem('nombre', data.nombre);
+                window.location.href = "../dashboard";
                 // Redirect to dashboard
-                window.location.href = "/dashboard";
             } else {
                 // Handle error
                 console.error("Sign-in failed");

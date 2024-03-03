@@ -2,6 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Oxygen } from "next/font/google";
+import "../style/signin.css";
+
+const oxygen = Oxygen({ weight: '400', subsets: ["latin"] });
 import { useState } from "react";
 
 const SignInPage: React.FC = () => {
@@ -45,19 +50,26 @@ const SignInPage: React.FC = () => {
 
     const handleGoBack = () => {
         // TODO: Implement go-back logic
+        window.location.href = "/";
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <div className="w-64">
-                <Image
-                    className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-                    src="/next.svg"
-                    alt="Next.js Logo"
-                    width={180}
-                    height={37}
-                    priority
-                />
+        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-blue-900 to-white">
+            <div className="logo-font">
+                <div className={oxygen.className}>
+                    <p className="text-7xl text-white">Audita</p>
+                </div>
+            </div>
+            <div className=" w-64 flex flex-col justify-between mb-32">
+                <div className="">
+                    <p className="text-left font-bold text-3xl py-2 text-white">
+                        Login
+                    </p>
+                    <p className="text-sm text-white mb-5">
+                        Ingresa tus datos para continuar
+                    </p>
+
+                </div>
 
                 <input
                     type="text"
@@ -74,19 +86,26 @@ const SignInPage: React.FC = () => {
                     className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md"
                 />
 
-                <button
-                    onClick={handleSignIn}
-                    className="w-full px-4 py-2 mb-4 text-white bg-blue-500 rounded-md"
-                >
-                    Sign In
-                </button>
+                <div className="flex justify-end">
+                    <button
+                        onClick={handleSignIn}
+                        className="sign-button"
+                    >
+                        <div className="flex flex-row">
+                            <p className="px-5">Sign In</p>
+                            <Image src="/right-arrow.png" width={20} height={20} alt="rightarrow"/>
+                        </div>
+                    </button>
+                </div>
 
-                <button
-                    onClick={handleGoBack}
-                    className="w-full px-4 py-2 text-blue-500 rounded-md"
-                >
-                    Go Back
-                </button>
+                <div className="flex justify-center -mb-96 py-44">
+                    <button
+                        onClick={handleGoBack}
+                        className="w-full px-4 py-2 text-blue-500 rounded-md"
+                    >
+                        Go Back
+                    </button>
+                </div>
             </div>
         </div>
     );
